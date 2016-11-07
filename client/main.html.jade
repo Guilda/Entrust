@@ -1,0 +1,21 @@
+html
+  head
+    title entrust
+  body
+    h1 Welcome to Meteor!
+    |   {{> hello}}
+    |   {{> info}}
+  template(name='hello')
+    button Click Me
+    p You've pressed the button {{counter}} times.
+  template(name='info')
+    h2 Learn Meteor!
+    ul
+      li
+        a(href='https://www.meteor.com/try', target='_blank') Do the Tutorial
+      li
+        a(href='http://guide.meteor.com', target='_blank') Follow the Guide
+      li
+        a(href='https://docs.meteor.com', target='_blank') Read the Docs
+      li
+        a(href='https://forums.meteor.com', target='_blank') Discussions
