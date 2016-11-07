@@ -1,0 +1,31 @@
+head
+  title Entrust
+
+body
+  div.container-fluid
+    div.col-md-12
+      h1 Entrust
+      |   {{> circles}}
+      
+
+      
+template(name='circles')
+  h3 Circles
+  
+  each circles
+    | {{> circle}}
+  
+  
+  h3 Guilds
+
+
+template(name= 'circle')
+  div.media
+    div.media-left
+      img.media-object.circle-icon-big(src= '/images/circle.png')
+    div.media-body
+      div.media-heading
+        h3.panel-title {{ name }}
+      
+      p.lead
+        {{ description }}
