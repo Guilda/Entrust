@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.jade';
+import { Circles } from '../imports/api/circles.js';
 
 Template.circles.onCreated(function helloOnCreated() {
   // counter starts at 0
@@ -9,20 +10,7 @@ Template.circles.onCreated(function helloOnCreated() {
 });
 
 Template.circles.helpers({
-  circles: [
-      {
-        name: 'Guilda',
-        description: 'Enabling communities through the power of trust'
-      },
-      {
-        name: 'Auckland ethereum developers',
-        description: 'Local group of Ethereum developers'
-      },
-      {
-        name: 'The Knife',
-        description: 'a Swedish electronic music duo from Gothenburg formed in 1999. The group consisted of siblings Karin Dreijer Andersson and Olof Dreijer, who together also run their own record company, Rabid Records. The group gained a large international following in response to their 2003 album Deep Cuts.'
-      },
-  ]
+  circles() { return Circles.find({}); }
 });
 
 Template.circles.events({
