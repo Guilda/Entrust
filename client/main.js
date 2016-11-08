@@ -14,8 +14,23 @@ Template.circles.helpers({
 });
 
 Template.circles.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
+  'submit .new-circle'(event) {
+    // Prevent default browser form submit
+    event.preventDefault();
+
+    // Get value from form element
+    const target = event.target;
+    const name = target.name.value;
+
+    console.log(name)
+
+    // Insert a task into the collection
+    Circles.insert({
+      name: name,
+      createdAt: new Date(), // current time
+    });
+
+    // Clear form
+    target.name.value = '';
   },
 });

@@ -2,7 +2,7 @@ head
   title Entrust
 
 body
-  div.container-fluid
+  div.container
     div.col-md-12
       h1 Entrust
       |   {{> circles}}
@@ -14,7 +14,8 @@ template(name='circles')
   
   each circles
     | {{> circle}}
-  
+  form.form.new-circle
+    input(type='text', name='name', placeholder="new circle name", class="form-control")
   
   h3 Guilds
 
@@ -27,5 +28,4 @@ template(name= 'circle')
       div.media-heading
         h3.panel-title {{ name }}
       
-      p.lead
-        {{ description }}
+      p.lead {{ description }}
