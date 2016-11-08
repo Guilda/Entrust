@@ -23,11 +23,18 @@ Template.circles.events({
     const name = target.name.value;
     const description = target.description.value;
 
+    if(!Meteor.userId())
+    {
+      sAlert.error('You need to sign up before you can create a new circle!');
+      return false;
+    }
+
     // Insert a task into the collection
     Circles.insert({
       name: name,
       description: description,
       createdAt: new Date(), // current time
+
     });
 
     // Clear form
