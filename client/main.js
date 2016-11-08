@@ -21,16 +21,17 @@ Template.circles.events({
     // Get value from form element
     const target = event.target;
     const name = target.name.value;
-
-    console.log(name)
+    const description = target.description.value;
 
     // Insert a task into the collection
     Circles.insert({
       name: name,
+      description: description,
       createdAt: new Date(), // current time
     });
 
     // Clear form
     target.name.value = '';
+    target.description.value = '';
   },
 });

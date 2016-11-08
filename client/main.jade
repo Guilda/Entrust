@@ -15,8 +15,9 @@ template(name='circles')
   each circles
     | {{> circle}}
   form.form.new-circle
-    input(type='text', name='name', placeholder="new circle name", class="form-control")
-  
+    input(type='text', name='name', placeholder="name", class="form-control")
+    textarea(type='text', name='description', placeholder="description", class="form-control")
+    button(type='submit') Create
   h3 Guilds
 
 
