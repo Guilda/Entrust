@@ -9,8 +9,11 @@ body
     
       h1 Entrust
       |   {{ > loginButtons }}
-      |   {{> circles}}
+      |   {{ > circles }}
+    div.col-sm-6
+      |   {{ > circles_form }}
       
+      h3 Guilds
 
       
 template(name='circles')
@@ -18,11 +21,12 @@ template(name='circles')
   
   each circles
     | {{> circle}}
+  
+template(name='circles_form')
   form.form.new-circle
     input(type='text', name='name', placeholder="name", class="form-control")
     textarea(type='text', name='description', placeholder="description", class="form-control")
     button(type='submit') Create
-  h3 Guilds
 
 
 template(name= 'circle')
