@@ -13,7 +13,7 @@ Template.circles.helpers({
   circles() { return Circles.find({}); }
 });
 
-Template.circles.events({
+Template.circles_form.events({
   'submit .new-circle'(event) {
     // Prevent default browser form submit
     event.preventDefault();
