@@ -1,0 +1,32 @@
+
+template(name='circles')
+  h3 Circles
+
+  each circles
+    | {{> circle}}
+
+  div.col-sm-6
+    |   {{ > circles_form }}
+
+    
+template(name= 'circle_show')
+  | {{> circle}}
+
+template(name='circles_form')
+  form.form.new-circle
+  input(type='text', name='name', placeholder="name", class="form-control")
+  textarea(type='text', name='description', placeholder="description", class="form-control")
+  button(type='submit') Create
+
+
+template(name= 'circle')
+  div.media
+    div.media-left
+      img.media-object.circle-icon-big(src= '/images/circle.png')
+    div.media-body
+      div.media-heading
+        h3.panel-title 
+          a(href="/circles/#{ _id }") #{ name } 
+            {{ name }}
+
+      p.lead {{ description }}

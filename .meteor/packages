@@ -26,3 +26,5 @@ accounts-ui
 accounts-password
 accounts-facebook
 juliancwirko:s-alert
+kadira:flow-router
+kadira:blaze-layout
