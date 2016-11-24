@@ -97,8 +97,8 @@ Template.mainLayout.onRendered( function(){
     		return "#000";
     	})
         .attr("stroke-width", "1px")
-        .attr("fill-opacity", 0.3)
-        .attr("stroke-opacity", 0.2)
+        .attr("fill-opacity", 0.0)
+        .attr("stroke-opacity", 0.4)
         .style("fill", function (d,i) {
     		return color[i];
     	})
