@@ -10,7 +10,7 @@ template(name='circles')
 
     
 template(name= 'circle_show')
-  | {{> circle circleData }}
+  | {{> circle_detail circleData }}
   
 template(name='circles_form')
   | {{> quickForm collection="Circles" id="insertCircleForm" type="insert" class="form" }}
@@ -21,9 +21,49 @@ template(name= 'circle')
     div.media-left
       img.media-object.circle-icon-big(src= '/images/circle.png')
     div.media-body
-      div.media-heading
-        h3.panel-title 
-          a(href="/circles/#{ _id }")
-            {{ name }}
-
+      h3.media-heading      
+        a(href="/circles/#{ _id }")
+          {{ name }}
       p.lead {{ description }}
+  hr
+
+template(name= 'messages')
+  each messages
+    span.text-muted {{ name }}: 
+    {{ message }}
+    br
+    
+template(name='input')
+  p
+    | Message: 
+    input(id='message' type='text')
+
+    
+
+template(name= 'circle_detail')
+  div.row
+    div.col-sm-4
+      div.panel.panel-default
+        div.panel-body
+          img.img-responsive(src= '/images/circle.png')
+          h1 
+            {{ name }}
+          strong
+            | Ξ 356.32 Eth 
+          p  
+            | 3 people
+          button.btn.btn-default 
+            span Join
+            
+    div.col-sm-8  
+      p.lead {{ description }}
+  div.row
+    div.col-sm-8
+      p.lead Discuss
+      | {{> input}}
+      | {{> messages}}
+    div.col-sm-4
+      p.lead 
+        | Proposals  
+        button.btn.btn-default 
+          span New Proposal

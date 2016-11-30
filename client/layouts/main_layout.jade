@@ -1,6 +1,6 @@
 template(name='layout_main')
   head
-    title Entrust
+    title MyMoon
 
   body
     div.container-fluid
@@ -19,7 +19,7 @@ template(name='layout_main')
         | {{> sAlert}}
         
         a(href="/")
-          h1 Entrust
+          h1.brand MyMoon
         |   {{ > loginButtons }}
         
         | {{> Template.dynamic template=main}}
