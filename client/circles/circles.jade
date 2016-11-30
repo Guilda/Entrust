@@ -23,14 +23,14 @@ template(name= 'circle')
     div.media-body
       h3.media-heading      
         a(href="/circles/#{ _id }")
-          {{ name }}
+          | {{ name }}
       p.lead {{ description }}
   hr
 
 template(name= 'messages')
   each messages
     span.text-muted {{ name }}: 
-    {{ message }}
+    | {{ message }}
     br
     
 template(name='input')
@@ -47,7 +47,7 @@ template(name= 'circle_detail')
         div.panel-body
           img.img-responsive(src= '/images/circle.png')
           h1 
-            {{ name }}
+            | {{ name }}
           strong
             | Ξ 356.32 Eth 
           p  
