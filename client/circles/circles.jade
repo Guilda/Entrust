@@ -10,13 +10,10 @@ template(name='circles')
 
     
 template(name= 'circle_show')
-  | {{> circle}}
-
+  | {{> circle circleData }}
+  
 template(name='circles_form')
-  form.form.new-circle
-  input(type='text', name='name', placeholder="name", class="form-control")
-  textarea(type='text', name='description', placeholder="description", class="form-control")
-  button(type='submit') Create
+  | {{> quickForm collection="Circles" id="insertCircleForm" type="insert" class="form" }}
 
 
 template(name= 'circle')

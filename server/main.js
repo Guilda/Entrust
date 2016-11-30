@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 
-import { Circles } from '../imports/api/circles.js';
+// import { Circles } from '../collections/circles.js';
 
 
 Meteor.startup(() => {

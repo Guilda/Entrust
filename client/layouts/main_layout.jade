@@ -1,25 +1,27 @@
-template(name='mainLayout')
+template(name='layout_main')
   head
     title Entrust
 
   body
     div.container-fluid
       div.row.no-gutter.map-row
-        div.col-sm-4
-          img(src="images/000001/000001_000001.jpg" class="img-responsive")
-        div.col-sm-4
-          img(src="images/000001/000001_000002.jpg" class="img-responsive")
-        div.col-sm-4
-          img(src="images/000001/000001_000003.jpg" class="img-responsive")
-        div.map-container
+        div.col-xs-4
+          img(src="/images/000001/000001_000001.jpg" class="img-responsive")
+        div.col-xs-4
+          img(src="/images/000001/000001_000002.jpg" class="img-responsive")
+        div.col-xs-4
+          img(src="/images/000001/000001_000003.jpg" class="img-responsive")
+        div.map-container(style="width: 100%;")
           svg(id="map")
     div.container
     
       div.col-md-12
         | {{> sAlert}}
-
-        h1 Entrust
+        
+        a(href="/")
+          h1 Entrust
         |   {{ > loginButtons }}
+        
         | {{> Template.dynamic template=main}}
     
       
